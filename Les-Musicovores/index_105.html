@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicovores</title>
+    <link rel="stylesheet" href="styles_105.css">
+    <link rel="icon" sizes="" type="image" href="img/picto/Plan de travail 1.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1> Rejoingnez les Musicovores !</h1><br><br>
+        <p> La musique... La musique... Partout où on va, elle nous accompagne. Qui n'aime pas la musique ? Il y en
+            a pour tous les goûts, tous les individus et en tout temps. Sur ce site, nous aborderons de mes sélections
+            musicales et de mes avis sur ces dernières. Bien sûr, vous aurez vous aussi le droit de rajouter votre
+            petite touche personnelle.</p>
+    </header>
+    <nav>
+        <a id="haut"></a>
+        <ul>
+            <!-- boutons pour le sommaire  -->
+            <div class="sap">
+                <li><a href="#simple">Simple and Clean</a></li>
+            </div>
+            <div class="vtth">
+                <li><a href="#vector">Vector to the Heavens </a></li>
+            </div>
+            <div class="ef">
+                <li><a href="#end">Endwalker - Footfalls</a></li>
+            </div>
+            <div class="tte">
+                <li><a href="#edge">To the edge</a></li>
+            </div>
+            <div class="d">
+                <li><a href="#dont">Don't</a> </li>
+            </div>
+            <div class="f">
+                <li><a href="#formulaire">Formulaire</a></li>
+            </div>
+        </ul>
+    </nav>
+    <div class="liste-musiques">
+    </div>
+
+
+    <aside>
+        <!-- le formulaire -->
+        <div class="form-contient">
+            <a id="formulaire"></a>
+            <form id='newmusic' action="#" method="post">
+                <h2>Ajouter une musique</h2>
+                <p><div class="sum"><a href="#haut">Sommaire &#9757; </a></div></p>
+                <p><strong> * = champs obligatoire</strong></p>
+                <div class="ensemble">
+                    <label for="titremusique"> Titre : *</label><br>
+                    <input type="text" id="titre-musique" name="titre-musique" required placeholder="One more time..."
+                        accept="text /* " maxlength="13">
+                </div>
+                <div class="ensemble">
+                    <label for="urlAudio"> Url de la musique : * </label><br>
+                    <input type="url" id="urlAudio" name="urlAudio" required placeholder=" Insère ton audio mp3"
+                        accept="url" aria-describedby="helpaudio">
+                        <span id="helpaudio">Mettez un audio mp3 de 15 secondes maxi</span>
+                </div>
+                <div class="ensemble">
+                    <label for="imageplus"> Ajoute ton image : </label><br>
+                    <input type="url" alt="" id="imageplus" name="imageplus" placeholder="image jolie..."
+                        accept="url" aria-describedby="helpimg">
+                        <span id="helpimg">Mettez une image de format png ou jpg pas très grosse</span>
+                </div>
+                <div class="ensemble">
+                    <label for="desc"> Description : * </label><br><br>
+                    <textarea id="desc" name="desc" rows="4" cols="50" placeholder="Cette musique me transporte car..."
+                        maxlength="40">
+                    </textarea>
+                </div><br>
+                <input type="submit" value="Ajouter la musique">
+                <!-- Bouton pour ouvrir la modale -->
+                <button class="ouvrir" onclick="ouvrirModale()">Preview</button>
+                <!-- la preview -->
+                <div id="maModale" class="modale">
+                    <section id="preview-section">
+                        <h2 id="previewtitre"></h2>
+                        <p id="previewdesc"></p><br><br>
+                        <audio id="previewaudio" controls></audio>
+                        <button class="play">&#9205;</button>
+                        <button class="stop">&#9208;</button><br><br>
+                        <button class="fermer" onclick="fermerModale()">&#10008;</button>
+                    </section>
+                </div>
+            </form>
+        </div>
+    </aside>
+    <footer>
+        <h1> Credit </h1>
+        <p> Copyright 2025 © Tous droits réservés.</p>
+        <details>
+            <summary>Mentions légales</summary>
+            <h2> 1. Information légal</h2>
+            <p> Ce site a été créé et édité par Deborah Madissouéké
+            <ul>
+                <li> Nom : Deborah Madissouéké</li>
+                <li>Ce site a été crée et édité par Deborah
+                <li> Siège social : 300 rue de la Fontaine, 77700 Bailly-Romaivilliers, France </li>
+                <li>Numéro de téléphone : +33 7 71 61 89 55</li>
+                <li> Adresse Mail : deborah.madissoueke@edu.univ-eiffel.fr </li>
+            </ul>
+            <h2>2. Hébergement</h2>
+            <p> Le site est hébergé par : o2switch</p>
+            <h2>3. Propriété Intellectuelle</h2>
+            <p>Tout contenu sur ce site, que ce soit images, texte, audios sont utilisés à des fins non lucratives</p>
+            <h2>4. Droits d'auteur</h2>
+            <ul>
+                <li> Simple and Clean : Utada Hikaru, Universal Music Publishing, Island Def Jam Music Group </li>
+                <li> Vector to the Heavens : Yoko Shimomura, Square Enix</li>
+                <li> Endwalker - Footfalls : Masayoshi Soken, Square Enix</li>
+                <li> To the edge : Masayoshi Soken, Square Enix</li>
+                <li> Don't : Shoji Meguro, Atlus</li>
+            </ul>
+            <h2>5. Modification des mentions légales</h2>
+            <p>Les présentes mentions légales peuvent être modifiées à tout moment. Nous vous recommandons de consulter
+                régulièrement cette page.</p>
+
+            <p>Dernière mise à jour : 10 janvier 2025</p>
+        </details>
+    </footer>
+    <script src="data_105.js"></script>
+    <script src="script_105.js"></script>
+</body>
+
+</html>
+
